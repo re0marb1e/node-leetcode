@@ -2,6 +2,8 @@
 
 // problem at https://leetcode-cn.com/problems/two-sum/
 
+// ******************** Description ********************
+
 /**
  * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
  * 
@@ -15,7 +17,14 @@
  * return [0, 1].
  */
 
-function method(nums, target){
+// ******************** Solution ********************
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
     for (let i = 0; i < nums.length; i++) {
         for (let j = i + 1; j < nums.length; j++) {
             if (target == nums[i] + nums[j]) {
@@ -23,6 +32,14 @@ function method(nums, target){
             }
         }
     }
-}
+};
 
-console.log(method([2, 7, 11, 15], 9));
+// ******************** Test ********************
+
+(function (){
+    let nums = [2, 7, 11, 15];
+    let target = 9;
+    let result = twoSum(nums, target);
+
+    console.log((nums[result[0]] + nums[result[1]]) === target);
+})();
